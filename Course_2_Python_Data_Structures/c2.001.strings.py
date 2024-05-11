@@ -78,6 +78,7 @@ print(s[0:4]) #prints 'Mont'
 print(s[6:7]) #prints 'P'
 print(s[6:20]) #prints 'Python
 
+
 #If we leave off the first number or the last number of the slice, it is assumed to be the beginning or end of the string respectively
 s = 'Monty Python'
 print(s[:2]) #prints 'Mo'

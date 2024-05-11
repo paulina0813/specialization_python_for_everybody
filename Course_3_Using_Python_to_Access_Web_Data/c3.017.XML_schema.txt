@@ -1,0 +1,85 @@
+XML Schema
+
+- Description of the legal format of an XML document
+- Expressed in terms of constraints on the structure and content of documents
+- Often used to specify a "contract" between systems - "My system will only accept XML that conforms
+to this particular Schema"
+- If a particular piece of XML meets the specification of the Schema, it is said to "validate"
+
+
+XML Document
+
+<person>
+    <lastname>Severance</lastname>
+    <age>17</age>
+    <dateborn>2001-04-17</dateborn>
+</person>
+
+
+XML Schema Contract
+
+<xs:complexType name="person">
+    <xs:sequence>
+        <xs:element name="lastname" type="xs:string"/>
+        <xs:element name="age" type="xs:stintegerring"/>
+        <xs:element name="dateborn" type="xs:date"/>
+    </xs:sequence>
+</xs:complexType>
+
+This can be validated because the document matches the contract
+
+
+Many XML Schema Languages
+
+- Document Type Definition (DTD)
+    - http://en.wikipedia.org/wiki/Document_Type_Definition
+- Standard Generalized Markup Language (ISO 8879:1986 SGML)
+    - http://en.wikipedia.org/wiki/SGML
+- XML Schema from W3C - (XSD)
+    - http://en.wikipedia.org/wiki/XML_Schema_(W3C)
+
+
+XSD XML Schema (W3C spec)
+
+- We will focus on the World Wide Web Consortium (W3C) version
+- It is often called "W3C Schema" because "Schema" is considered generic
+- More commonly it is called XSD because the file names end in .xsd 
+
+
+XSD Structure 
+
+<person>
+    <lastname>Severance</lastname>
+    <age>17</age>
+    <dateborn>2001-04-17</dateborn>
+</person>
+
+<xs:complexType name="person">
+    <xs:sequence>
+        <xs:element name="lastname" type="xs:string"/>
+        <xs:element name="age" type="xs:stintegerring"/>
+        <xs:element name="dateborn" type="xs:date"/>
+    </xs:sequence>
+</xs:complexType>
+
+- xs:element - <lastname>Severance</lastname>, <age>17</age>, <dateborn>2001-04-17</dateborn>,
+<xs:element name="lastname" type="xs:string"/>, <xs:element name="age" type="xs:stintegerring"/>, 
+<xs:element name="dateborn" type="xs:date"/>
+- xs:sequence - <xs:sequence> : </xs:sequence>
+- xs:complexType - <person> : </person>, <xs:complexType name="person"> : </xs:complexType>
+
+You can also add some constraints
+<xs:element name="person">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="full_name" type="xs.string"
+                minOccurs="1" maxOccurs="1"/>
+            <xs:element name="child_name" type="xs.string"
+                minOccurs="0" maxOccurs="10"/>
+        </xs:sequence>
+    </xs:complexType>
+<xs:element>
+
+- For full_name, the constraint indicates that there's one and exactly one. If you have
+less than one, it's an error. If you have more than one, it's an error
+- For child_name, there must be between 0 and 10 occurrences of that tag

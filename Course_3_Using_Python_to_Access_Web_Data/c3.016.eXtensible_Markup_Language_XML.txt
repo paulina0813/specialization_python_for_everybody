@@ -1,0 +1,48 @@
+XML "Elements" (or Nodes)
+
+<people>
+    <person>
+        <name>Chuck</name>
+        <phone>303 4456</phone>
+    </person>
+    <person>
+        <name>Noah</name>
+        <phone>622 7421</phone>
+    </person>
+<people>
+
+The simple elements are name and phone and the complex elements are
+person and people
+
+
+eXtensible Markup Language
+- Primary purpose is to help information systems share structured data
+- It started as a simplified subset of the Standard Generalized Markup 
+Language (SGML), and is designed to be relatively human-legible
+
+
+XML Basics
+<person>
+    <name>Chuck</name>
+    <phone type="intl">
+        +1 734 303 4456
+    </phone>
+    <email hide="yes" />
+</person>
+
+- Start tag - <person>, <name>, <phone ...>
+- End tag - </name>, </phone>, </person>
+- Text content - Chuck, +1 734 303 4456
+- Attribute - type="intl", hide="yes"
+- Self Closing Tag - <email ... />
+
+White Space
+- Line ends do not matter
+- White space is generally discarded on text elements
+- We indent only to be readable
+
+XML Terminology
+- Tags: indicate the beginning and ending of elements
+- Attributes: keyword/value pairs on the opening tag of XML
+- Serialize / De-Serialize: Convert dtaa in one program into a common format that can
+be stored and/or transmitted between systems in a programming language-independent manner
